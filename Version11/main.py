@@ -9,9 +9,9 @@ pygame.mouse.set_visible(0)
 screen = pygame.display.set_mode((500,600)) 
 pygame.display.set_caption("Asteroide")
 
-background_filename = 'images/wallpaper.jpg'
-ecra = pygame.display.set_mode((comprimento_ecra, altura_ecra))
-background = pygame.image.load(background_filename).convert()
+
+background = pygame.image.load('images/wallpaper.jpg').convert()
+
 
 clock = pygame.time.Clock()
 sound_ast = pygame.mixer.Sound("sounds/ast_destroy.ogg")
@@ -161,6 +161,8 @@ while not done:
             if event.key == pygame.K_SPACE:
                 tiros.append(criaTiro(x+25,y+25))
                 
+    screen.blit(background, [0,0])
+    
     moveTiro();
         
     ColisaoTiroAsteroide() 
@@ -169,7 +171,10 @@ while not done:
     
     moveAsteroide()
     done = ColisaoNaveAsteroide(x,y)
+
+
     
+
     pygame.display.flip()
  
     # --- Limit to 60 frames per second
