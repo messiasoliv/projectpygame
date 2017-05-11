@@ -1,0 +1,3 @@
+- Adicionar funcionalidade de som nas colisões
+	- Asteroide / Tiro
+	- Asteroide / Nave
